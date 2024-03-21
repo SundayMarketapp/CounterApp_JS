@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounterApp</title>
+    <style>
+        body{
+            font-size: arial,sans-serif;
+            text-align: center;
+        }
+
+        #counter{
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        button{
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+   <h1>CounterApp</h1>
+   <div id="counter">0</div>
+
+   <button id="incrementButton">Increment</button>
+   <button id="decrementButton">Decrement</button>
+<script>
+    let count=0;
+    //Getting DOM Elements
+      const CounterDisplay=document.getElementById("counter");
+      const IncrementButton=document.getElementById("incrementButton");
+      const DecrementButton=document.getElementById("decrementButton");
+    //Function to update the CounterDisplay
+       function updateCounterDisplay() {
+               CounterDisplay.textContent=count;
+       }
+     //Function to Increment Button
+       function updateIncrementButton() {
+                count++;
+                updateCounterDisplay();
+       }
+    //Function to Decrement Button
+        function updateDecrementButton(){
+            if (count>0){
+                count--;
+                updateCounterDisplay();
+
+            }
+        }
+    //Event Listeners
+       IncrementButton.addEventListener("click",updateIncrementButton);
+       DecrementButton.addEventListener("click",updateDecrementButton);
+
+       updateCounterDisplay();
+
+</script>
+
+</body>
+</html>
